@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: #f2f5f7;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    font-weight: 300;
+  }
+  
+  body {
+    overflow-x: hidden;
+  }
+  
+  nav {
+    height: 4rem;
+    width: 100vw;
+    background-color: #131418;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between; /* Ensure the logo and menu are spaced */
+    align-items: center;
+    position: fixed;
+    z-index: 10;
+    padding: 0 2vw; /* Add padding to left and right to give some space */
+  }
+  
+  .logo {
+    padding: 1vh 1vw;
+    text-align: center;
+  }
+  
+  .logo img {
+    height: 5rem;
+    width: 5rem;
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly; /* Distribute items evenly */
+    align-items: center;
+    width: 70vw; /* Ensure there is space for links on desktop */
+    padding: 0;
+    margin: 0;
+    text-transform: capitalize;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-links li {
+    position: relative;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: #f2f5f7; /* Ensure text is white */
+    margin: 0 0.7vw;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links li a:hover {
+    color: #61DAFB; /* Hover effect on links */
+  }
+  
+  .nav-links li a::before {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 0%;
+    background-color: #61DAFB;
+    position: absolute;
+    transition: all 250ms ease-in-out;
+    margin: 0 0 0 10%;
+  }
+  
+  .nav-links li a:hover::before {
+    width: 80%;
+  }
+  
+  .login-button,
+  .join-button {
+    background-color: transparent;
+    border-radius: 2em;
+    padding: 0.6rem 0.8rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .login-button {
+    border: 1.5px solid #f2f5f7;
+  }
+  
+  .login-button:hover {
+    color: #131418;
+    background-color: #f2f5f7;
+    border: 1.5px solid #f2f5f7;
+  }
+  
+  .join-button {
+    color: #131418;
+    background-color: #61DAFB;
+    border: 1.5px solid #61DAFB;
+  }
+  
+  .join-button:hover {
+    color: #f2f5f7;
+    background-color: transparent;
+    border: 1.5px solid #f2f5f7;
+  }
+  
+  /* Hamburger styles */
+  .hamburger {
+    display: none;
+    cursor: pointer;
+  }
+  
+  .hamburger div {
+    width: 30px;
+    height: 3px;
+    background: #f2f5f7;
+    margin: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  @media screen and (max-width: 800px) {
+    .nav-links {
+      position: fixed;
+      background: #131418;
+      height: 0; /* Start with height 0 */
+      width: 100%;
+      flex-direction: column;
+      top: 0;
+      left: 0;
+      padding: 20px 0;
+      justify-content: flex-start;
+      overflow: hidden; /* Hide overflow */
+      opacity: 0; /* Initially hide the links */
+      pointer-events: none;
+      transition: all 0.5s ease-out;
+    }
+  
+    .nav-links.open {
+      height: 100vh; /* Full screen height when open */
+      opacity: 1; /* Show the links */
+      pointer-events: all;
+    }
+  
+    .hamburger {
+      display: block;
+      position: absolute;
+      right: 5%;
+      top: 50%;
+      transform: translate(-5%, -50%);
+      z-index: 2;
+      transition: all 0.7s ease;
+    }
+  
+    .nav-links li {
+      opacity: 0; /* Initially hide menu items */
+      transition: opacity 0.5s ease;
+    }
+  
+    .nav-links.open li {
+      opacity: 1; /* Make them visible once the menu opens */
+      padding: 10px;
+    }
+  
+    .nav-links li:nth-child(1) {
+      transition: opacity 0.5s ease 0.2s;
+    }
+    .nav-links li:nth-child(2) {
+      transition: opacity 0.5s ease 0.4s;
+    }
+    .nav-links li:nth-child(3) {
+      transition: opacity 0.5s ease 0.6s;
+    }
+    .nav-links li:nth-child(4) {
+      transition: opacity 0.5s ease 0.8s;
+    }
+    .nav-links li:nth-child(5) {
+      transition: opacity 0.5s ease 1s;
+    }
+    .nav-links li:nth-child(6) {
+      transition: opacity 0.5s ease 1.2s;
+    }
+    .nav-links li:nth-child(7) {
+      transition: opacity 0.5s ease 1.4s;
+    }
+  
+    .toggle .line1 {
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
+  
+    .toggle .line2 {
+      width: 0;
+      transition: all 0.7s ease;
+    }
+  
+    .toggle .line3 {
+      transform: rotate(45deg) translate(-5px, -6px);
+    }
+  }
+  
+  
